@@ -61,7 +61,7 @@
   }
 }
 
-$total: 11;
+$total: 30;
 @for $i from 0 through ($total - 1) {
   $hue: ($i / $total) * -360;
   $rotationRange: 50;
@@ -126,3 +126,7 @@ $total: 11;
     transform: scale(1.15);
   }
 }
+// linear-gradient(
+//         -135deg, hsla($hue, 100%, 80%, 1),
+//         hsla($hue, 90%, 45%, 1)
+//       )
