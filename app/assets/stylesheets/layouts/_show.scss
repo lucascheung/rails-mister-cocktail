@@ -1,0 +1,17 @@
+.show-card {
+  display: flex;
+  .show-card-content {
+    padding: 20px;
+    ul {
+      margin:0;
+      padding:0;
+      li a {
+        color: #88650c !important;
+      }
+    }
+  }
+}
+
+.container a{
+  color: #fdc22d !important;
+}

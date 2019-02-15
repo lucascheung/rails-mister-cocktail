@@ -1,23 +1,33 @@
-<h1><%= @cocktail.name %></h1>
-
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
-
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li>
-      <%= dose.description %>
-      <%= dose.ingredient.name %>
-      <%= link_to dose_path(dose), method: :delete do  %>
-        <i class="far fa-trash-alt"></i>
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+  <div class="show-card">
+      <% if @cocktail.photo %>
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
+    <% end %>
+    <div class="show-card-content">
+      <h2>How to make this cocktail:</h2>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.description %>
+            <%= dose.ingredient.name %>
+            <%= link_to dose_path(dose), method: :delete do  %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to new_cocktail_dose_path(@cocktail) do %>
+        <i class="fas fa-plus"></i> Ingredient
       <% end %>
-    </li>
+    </div>
+  </div>
+
+
+  <%= link_to new_cocktail_dose_path(@cocktail) do %>
+    <i class="fas fa-edit"></i> Edit
   <% end %>
-</ul>
+  <br>
+  <%= link_to "Go back to the super cool cocktail menu", root_path  %>
+</div>
 
-<%= link_to "Edit", edit_cocktail_path(@cocktail) %>
-
-
-<%= link_to new_cocktail_dose_path(@cocktail) do %>
-  <i class="fas fa-plus"></i> Ingredient
-<% end %>
-<%= link_to "Go back", root_path  %>

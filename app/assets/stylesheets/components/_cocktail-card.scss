@@ -63,17 +63,14 @@
 
 $total: 30;
 @for $i from 0 through ($total - 1) {
-  $hue: ($i / $total) * -360;
+  $hue: 45;
   $rotationRange: 50;
   $rotation: ($i - ($total - 1) / 2) / ($total - 2) * $rotationRange;
   $offsetRange: 80;
   $offset: abs(($i - ($total - 1) / 2) / ($total - 2) * $offsetRange);
   .cocktail-card:nth-child(#{$i + 1}) {
     .card-face {
-      background: linear-gradient(
-        -135deg, hsla($hue, 100%, 80%, 1),
-        hsla($hue, 90%, 45%, 1)
-      );
+      background: rgba(30,30,0,0.8);
       box-shadow:
         -5px 5px 5px hsla(0, 0%, 0%, 0.15),
         inset 0 0 0 2px hsla($hue, 100%, 80%, 0.75)
@@ -81,7 +78,6 @@ $total: 30;
       transform: translateY($offset * 1px) rotate($rotation * 1deg);
       .card-label {
         color: hsla($hue, 100%, 43%, 1);
-        text-shadow: -0.025em  0.025em 0 hsla($hue, 100%, 75%, 1);
       }
       .card-content {
         display: none;
@@ -106,10 +102,13 @@ $total: 30;
       .card-name{
         font-size: 15px;
         padding-bottom: 10px;
+        color: #e9692d;
       }
       .card-content {
         display: block;
         line-height:2px;
+        font-size: 8px;
+        color: #a37e21;
       }
     }
   }

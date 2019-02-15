@@ -4,6 +4,7 @@
   .video iframe {
     width: 100vw;
     height: calc(100vh - 80px);
+    border: 0;
   }
 }
 
@@ -20,7 +21,7 @@
 .banner-content {
   position: absolute;
   top: 40vh;
-  left: 30vw;
+  left: 27vw;
   text-align: center;
   h1 {
     margin:0;
