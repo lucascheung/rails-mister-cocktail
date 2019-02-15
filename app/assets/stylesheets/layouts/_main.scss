@@ -4,12 +4,16 @@ body {
   li {
     list-style: none;
   }
+
   a {
-    text-decoration: none !important;;
+    text-decoration: none !important;
   }
 
   h1 {
     color: #dfdfdf;
-    margin-top: 80px;
   }
+}
+
+.empty-space {
+  height: 80px
 }
