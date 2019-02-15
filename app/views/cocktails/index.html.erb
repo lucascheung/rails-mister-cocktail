@@ -1,0 +1,27 @@
+<div class="banner">
+<!--     <video autoplay muted loop id="myVideo">
+    <source src="../rain.mp4" type="video/mp4">
+  </video> -->
+  <div class='video-banner'>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/nazk5vD0qu4?loop=1&playlist=nazk5vD0qu4&modestbranding=1&autoplay=1&showinfo=0&mute=1&controls=0&autohide=1&disablekb=1"></iframe>
+    </div>
+    <div class="video-overlay">
+    </div>
+    <div class="banner-content">
+      <h1>KING KAI COCKTAILS</h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="cards">
+    <% @cocktails.each do |cocktail| %>
+        <div class="cocktail-card">
+          <div class="card-face">
+            <div class="card-label"><%= cocktail.name %></div>
+          </div>
+        </div>
+    <% end %>
+</div>
+
