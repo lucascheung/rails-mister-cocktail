@@ -16,12 +16,23 @@
 
 
 <div class="cards">
-    <% @cocktails.each do |cocktail| %>
-        <div class="cocktail-card">
-          <div class="card-face">
-            <div class="card-label"><%= cocktail.name %></div>
+  <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail_path(cocktail) do %>
+      <div class="cocktail-card">
+        <div class="card-face">
+          <div class="card-label">
+            <div class="card-name">
+              <%= cocktail.name %>
+            </div>
+            <div class="card-content">
+              <% cocktail.ingredients.each do |ingredient|%>
+                <p><%= ingredient.name %></p>
+              <% end %>
+            </div>
           </div>
         </div>
+      </div>
     <% end %>
+  <% end %>
 </div>
 

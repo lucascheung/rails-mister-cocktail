@@ -16,7 +16,7 @@
   width: 100px;
   &:after {
     // uncomment background below to see hit areas
-    //background: rgba(255, 0, 0, 0.15);
+    // background: rgba(255, 0, 0, 0.15);
     bottom: 0;
     content: '';
     left: -60px;
@@ -31,7 +31,6 @@
   bottom: 0;
   content: '';
   left: 0;
-  pointer-events: none;
   position: absolute;
   right: 0;
   top: 0;
@@ -51,10 +50,15 @@
 
 .card-label {
   font-family: 'helvetica neue', helvetica, arial, sans-serif;
-  font-size: 24px;
+  font-size: 15px;
   font-weight: bold;
   letter-spacing: -0.025em;
   padding: 15px 0 0 15px;
+  .card-content{
+    font-size: 8px;
+    display: none;
+    text-decoration: none;
+  }
 }
 
 $total: 11;
@@ -79,6 +83,9 @@ $total: 11;
         color: hsla($hue, 100%, 43%, 1);
         text-shadow: -0.025em  0.025em 0 hsla($hue, 100%, 75%, 1);
       }
+      .card-content {
+        display: none;
+      }
     }
     &:hover {
       .card-face {
@@ -96,9 +103,18 @@ $total: 11;
       &:after {
         top: -175px;
       }
+      .card-name{
+        font-size: 15px;
+        padding-bottom: 10px;
+      }
+      .card-content {
+        display: block;
+        line-height:2px;
+      }
     }
   }
 }
+
 
 @keyframes fade {
   0% {
